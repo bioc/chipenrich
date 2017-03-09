@@ -1,3 +1,9 @@
+CHANGES IN VERSION 1.12.1
+-------------------------
+
+  o Fixed a bug in the check for proper organism + geneset combinations. Prevented
+    combinations that are actually valid from running.
+
 CHANGES IN VERSION 1.11.4
 -------------------------
 
