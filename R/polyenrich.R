@@ -373,7 +373,7 @@ polyenrich = function(
 		message("Wrote count of peaks per gene to: ", filename_ppg)
 
 		if (qc_plots) {
-			filename_qcplots = file.path(out_path, sprintf("%s_qcplots.pdf", out_name))
+			filename_qcplots = file.path(out_path, sprintf("%s_qcplots.png", out_name))
 			grDevices::pdf(filename_qcplots)
 				print(..plot_polyenrich_spline(gpw = ppg, mappability = mappability, num_peaks = num_peaks))
 				print(..plot_dist_to_tss(peakobj, tss))
