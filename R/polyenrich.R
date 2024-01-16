@@ -374,7 +374,7 @@ polyenrich = function(
 
 		if (qc_plots) {
 			filename_qcplots = file.path(out_path, sprintf("%s_qcplots.png", out_name))
-			grDevices::pdf(filename_qcplots)
+			grDevices::png(filename_qcplots)
 				print(..plot_polyenrich_spline(gpw = ppg, mappability = mappability, num_peaks = num_peaks))
 				print(..plot_dist_to_tss(peakobj, tss))
 			grDevices::dev.off()
