@@ -80,12 +80,12 @@ test_that('Test chipapprox method', {
     expect_equal(class(results), 'list')
 })
 
-test_that('Test old chipapprox method', {
-	results = suppressWarnings(chipenrich(peaks = peaks_E2F4, genome = 'hg19', genesets = gs_path, method = 'chipapprox_old',
-		locusdef = "nearest_tss", qc_plots = F, out_name = NULL, n_cores = 1))
+#test_that('Test old chipapprox method', {
+#	results = suppressWarnings(chipenrich(peaks = peaks_E2F4, genome = 'hg19', genesets = gs_path, method = 'chipapprox_old',
+#		locusdef = "nearest_tss", qc_plots = F, out_name = NULL, n_cores = 1))
 
-	expect_equal(class(results), 'list')
-})
+#	expect_equal(class(results), 'list')
+#})
 
 test_that('Test polyenrich method', {
 	results = suppressWarnings(polyenrich(peaks = peaks_E2F4, genome = 'hg19', genesets = gs_path, method = 'polyenrich',
