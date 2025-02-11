@@ -132,6 +132,7 @@ test_that('Error from polyenrich weighted picking both signalValue and logsignal
     'You can only choose one of signalValue and logsignalValue!')
 })
 
+# this test need to be fixed
 # test_that('Error from polyenrich weighted picking no weighting option', {
 #     expect_error(
 #     suppressWarnings(polyenrich(peaks = peaks_plus_sv, genome = 'hg19', genesets = gs_path,  method = 'polyenrich_weighted', weighting = NULL,
