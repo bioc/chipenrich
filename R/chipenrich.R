@@ -273,10 +273,10 @@ chipenrich = function(
 	ppg = num_peaks_per_gene(assigned_peaks, ldef, mappa)
 
 	# Add relevant columns to ppg depending on the method
-	if(method == 'chipapprox_old') {
-		message("Calculating weights for approximate method..")
-		ppg = calc_approx_weights(ppg,mappa)
-	}
+	#if(method == 'chipapprox_old') {
+	#	message("Calculating weights for approximate method..")
+	#	ppg = calc_approx_weights(ppg,mappa)
+	#}
 
 	######################################################
 	# Enrichment
