@@ -9,7 +9,7 @@
 #' @importFrom BiocGenerics unlist
 #' @import chipenrich.data
 #' @import GenomicRanges
-#' @importFrom GenomeInfoDb seqinfo
+#' @importFrom Seqinfo seqinfo
 #' @importFrom grDevices dev.off pdf
 #' @import grid
 #' @importFrom IRanges IRanges

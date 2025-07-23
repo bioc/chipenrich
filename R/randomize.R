@@ -5,7 +5,7 @@ randomize_ldef_bylocation = function(ldef, resolution=50) {
 	ldef_gr = ldef@granges
 
 	# Split by chromosome
-	ldef_grl = S4Vectors::split(ldef_gr, GenomeInfoDb::seqnames(ldef_gr))
+	ldef_grl = S4Vectors::split(ldef_gr, Seqinfo::seqnames(ldef_gr))
 
 	# Within each chromosome:
 	# 1. Form groups based on the number of genes on that chromosome

@@ -34,7 +34,7 @@ assign_peaks = function(peaks, locusdef, tss, weighting=NULL) {
 	# on that basis. Include the peak name for later merging
 	peak_mids = IRanges::mid(GenomicRanges::ranges(peaks))
 	mids_gr = GenomicRanges::GRanges(
-		seqnames = GenomeInfoDb::seqnames(peaks),
+		seqnames = Seqinfo::seqnames(peaks),
 		ranges = IRanges::IRanges(start = peak_mids, end = peak_mids),
 		name = GenomicRanges::mcols(peaks)$name
 	)
@@ -80,7 +80,7 @@ assign_peaks = function(peaks, locusdef, tss, weighting=NULL) {
 	ldef_indices = S4Vectors::subjectHits(mid_ldef_overlaps)
 	mid_ldef_df = data.frame(
 		peak_id = GenomicRanges::mcols(mids_gr)$name[mid_indices],
-		chr = GenomeInfoDb::seqnames(mids_gr)[mid_indices],
+		chr = Seqinfo::seqnames(mids_gr)[mid_indices],
 		peak_start = GenomicRanges::start(peaks)[mid_indices],
 		peak_end = GenomicRanges::end(peaks)[mid_indices],
 		gene_locus_start = GenomicRanges::start(ldef_gr)[ldef_indices],
@@ -195,7 +195,7 @@ assign_peak_segments = function(peaks, locusdef) {
 
 	d = data.frame(
 		peak_id = GenomicRanges::mcols(peaks)$name[peak_indices],
-		chr = GenomeInfoDb::seqnames(peaks)[peak_indices],
+		chr = Seqinfo::seqnames(peaks)[peak_indices],
 		peak_start = peak_start,
 		peak_end = peak_end,
 		gene_locus_start = gene_start,

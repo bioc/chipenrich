@@ -8,7 +8,7 @@ peak_nearest_tss = function(peaks, tss) {
 	# on that basis. Include the peak name for later merging
 	peak_mids = IRanges::mid(GenomicRanges::ranges(peaks))
 	mids_gr = GenomicRanges::GRanges(
-		seqnames = GenomeInfoDb::seqnames(peaks),
+		seqnames = Seqinfo::seqnames(peaks),
 		ranges = IRanges::IRanges(start = peak_mids, end = peak_mids),
 		name = GenomicRanges::mcols(peaks)$name
 	)
@@ -18,7 +18,7 @@ peak_nearest_tss = function(peaks, tss) {
 	mid_indices = S4Vectors::queryHits(mid_dist_to_ntss)
 	tss_indices = S4Vectors::subjectHits(mid_dist_to_ntss)
 	mid_dist_df = data.frame(
-		chr = GenomeInfoDb::seqnames(mids_gr)[mid_indices],
+		chr = Seqinfo::seqnames(mids_gr)[mid_indices],
 		peak_midpoint = GenomicRanges::start(mids_gr)[mid_indices],
 		nearest_tss = GenomicRanges::start(tss)[tss_indices],
 		dist_to_tss = GenomicRanges::mcols(mid_dist_to_ntss)$distance,

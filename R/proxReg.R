@@ -232,13 +232,13 @@ proxReg = function(
 					seqnames.field = "chr", start.field = "peak_start",end.field = "peak_end")
 		peak_mids = IRanges::mid(GenomicRanges::ranges(peakobj2))
 		mids_gr = GenomicRanges::GRanges(
-			seqnames = GenomeInfoDb::seqnames(peakobj2),
+			seqnames = Seqinfo::seqnames(peakobj2),
 			ranges = IRanges::IRanges(start = peak_mids, end = peak_mids),
 			name = GenomicRanges::mcols(peakobj2)$name
 		)
 		enhancer_mids = IRanges::mid(GenomicRanges::ranges(enhancers))
 		enhancer_mids_gr = GenomicRanges::GRanges(
-			seqnames = GenomeInfoDb::seqnames(enhancers),
+			seqnames = Seqinfo::seqnames(enhancers),
 			ranges = IRanges::IRanges(start = enhancer_mids, end = enhancer_mids),
 			name = GenomicRanges::mcols(enhancers)$name
 		)
